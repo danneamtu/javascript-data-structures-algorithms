@@ -1,0 +1,22 @@
+{
+  "name": "javascript-data-structures-algorithms",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisipanaque/javascript-data-structures-algorithms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisipanaque/javascript-data-structures-algorithms/issues"
+  },
+  "homepage": "https://github.com/chrisipanaque/javascript-data-structures-algorithms#readme",
+  "dependencies": {
+    "jest": "^24.8.0"
+  }
+}
