@@ -1,5 +1,7 @@
 function reverseInteger(n) {
-  if (Math.sign(n) > 0) {
+  const multiplier = Math.sign(n);
+
+  if (multiplier > 0) {
     return +n
       .toString()
       .split('')
@@ -12,7 +14,7 @@ function reverseInteger(n) {
         .split('')
         .filter(negativeSign => negativeSign !== '-')
         .reverse()
-        .join('') * Math.sign(n)
+        .join('') * multiplier
     );
   }
 }
