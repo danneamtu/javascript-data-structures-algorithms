@@ -3,22 +3,27 @@ function maxChar(str) {
   let max = 0;
   let maxCharacter = '';
 
-  str.split('').reduce((obj, char) => {
+  const characterMap = str.split('').reduce((obj, char) => {
     if (obj[char]) {
       ++obj[char];
     } else {
       obj[char] = 1;
     }
-
-    if (obj[char] > max) {
-      max = obj[char];
-      maxCharacter = char;
-    }
-
     return obj;
   }, {});
 
+  for (let character in characterMap) {
+    if (characterMap[character] > max) {
+      max = characterMap[character];
+      maxCharacter = character;
+    }
+  }
   return maxCharacter;
 }
 
 module.exports = maxChar;
+
+// if (obj[char] > max) {
+//   max = obj[char];
+//   maxCharacter = char;
+// }
