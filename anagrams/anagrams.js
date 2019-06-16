@@ -1,28 +1,14 @@
 function anagrams(stringA, stringB) {
-  const aMap = buildCharacterMap(stringA);
-  const bMap = buildCharacterMap(stringB);
-
-  if (Object.keys(aMap).length !== Object.keys(bMap).length) {
-    return false;
-  }
-
-  for (let key in aMap) {
-    if (aMap[key] !== bMap[key]) {
-      return false;
-    }
-  }
-
-  return true;
+  return cleanStringAndSort(stringA) === cleanStringAndSort(stringB);
 }
 
-function buildCharacterMap(str) {
-  const characterMap = {};
-
-  for (let character of str.replace(/[^\w]/g, '').toLowerCase()) {
-    characterMap[character] = ++characterMap[character] || 1;
-  }
-
-  return characterMap;
+function cleanStringAndSort(str) {
+  return str
+    .replace(/[^\w]/g, '')
+    .toLowerCase()
+    .split('')
+    .sort()
+    .join('');
 }
 
 module.exports = anagrams;
@@ -61,4 +47,32 @@ module.exports = anagrams;
 
 //     return true;
 //   }
+// }
+
+// SECOND SOLUTION:
+// function anagrams(stringA, stringB) {
+//   const aMap = buildCharacterMap(stringA);
+//   const bMap = buildCharacterMap(stringB);
+
+//   if (Object.keys(aMap).length !== Object.keys(bMap).length) {
+//     return false;
+//   }
+
+//   for (let key in aMap) {
+//     if (aMap[key] !== bMap[key]) {
+//       return false;
+//     }
+//   }
+
+//   return true;
+// }
+
+// function buildCharacterMap(str) {
+//   const characterMap = {};
+
+//   for (let character of str.replace(/[^\w]/g, '').toLowerCase()) {
+//     characterMap[character] = ++characterMap[character] || 1;
+//   }
+
+//   return characterMap;
 // }
