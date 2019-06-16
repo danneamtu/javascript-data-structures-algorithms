@@ -4,6 +4,14 @@ test('anagrams function exists', () => {
   expect(typeof anagrams).toEqual('function');
 });
 
+test('rail safety is an anagram of fairy tales', () => {
+  expect(anagrams('rail safety', 'fairy tales')).toBeTruthy();
+});
+
+test('RAIL! SAFETY! is an anagram of fairy tales', () => {
+  expect(anagrams('RAIL! SAFETY!', 'fairy tales')).toBeTruthy();
+});
+
 test('hello is an anagram of llohe', () => {
   expect(anagrams('hello', 'llohe')).toBeTruthy();
 });
