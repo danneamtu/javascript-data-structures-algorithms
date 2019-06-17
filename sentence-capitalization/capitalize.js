@@ -1,3 +1,5 @@
-function capitalize(str) {}
+function capitalize(str) {
+  
+}
 
 module.exports = capitalize;

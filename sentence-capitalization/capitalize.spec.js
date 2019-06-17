@@ -13,3 +13,11 @@ test('capitalizes the first letter of every word in a sentence', () => {
     'I Love Breakfast At Bill Miller Bbq'
   );
 });
+
+test('capitalizes the first letter of every word in a sentence', () => {
+  expect(capitalize('a short sentence')).toEqual('A Short Sentence');
+});
+
+test('capitalizes the first letter of every word in a sentence', () => {
+  expect(capitalize('look, it is working!')).toEqual('Look, It Is Working!');
+});
