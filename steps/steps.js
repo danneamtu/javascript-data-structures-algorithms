@@ -1,13 +1,7 @@
 function steps(n) {
   let pounds = '';
-  let spaces = '';
 
-  const stepsArray = Array.from({ length: n }, (element, index) => {
-    // if (index < n) {
-    //   pounds += '#';
-    //   return pounds;
-    // }
-
+  const stepsArray = Array.from({ length: n }, (_, index) => {
     pounds = '';
 
     for (let i = 0; i < index + 1; i++) {
@@ -17,7 +11,7 @@ function steps(n) {
     while (pounds.length < n) {
       pounds += ' ';
     }
-    
+
     return pounds;
   });
 
