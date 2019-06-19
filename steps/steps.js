@@ -1,21 +1,21 @@
-function steps(n, step = 0) {
-  if (step === n) {
+function steps(n, row = 0) {
+  if (row === n) {
     return;
   }
 
-  let stair = '';
+  let str = '';
 
-  for (let i = 0; i <= step; i++) {
-    stair += '#';
+  while (str.length !== n) {
+    if (str.length <= row) {
+      str += '#';
+    } else {
+      str += ' ';
+    }
   }
 
-  while (stair.length < n) {
-    stair += ' ';
-  }
+  console.log(str);
 
-  console.log(stair);
-
-  steps(n, step + 1);
+  steps(n, row + 1);
 }
 
 module.exports = steps;
@@ -57,4 +57,25 @@ module.exports = steps;
 //   }
 
 //   console.log(stair);
+// }
+
+// FIRST RECURSIVE SOLUTION
+// function steps(n, step = 0) {
+//   if (step === n) {
+//     return;
+//   }
+
+//   let stair = '';
+
+//   for (let i = 0; i <= step; i++) {
+//     stair += '#';
+//   }
+
+//   while (stair.length < n) {
+//     stair += ' ';
+//   }
+
+//   console.log(stair);
+
+//   steps(n, step + 1);
 // }
