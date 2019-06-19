@@ -1,17 +1,21 @@
-function steps(n) {
-  for (let row = 1; row <= n; row++) {
-    let stair = '';
-
-    for (let column = 1; column <= n; column++) {
-      if (column <= row) {
-        stair += '#';
-      } else {
-        stair += ' ';
-      }
-    }
-
-    console.log(stair);
+function steps(n, step = 0) {
+  if (step === n) {
+    return;
   }
+
+  let stair = '';
+
+  for (let i = 0; i <= step; i++) {
+    stair += '#';
+  }
+
+  while (stair.length < n) {
+    stair += ' ';
+  }
+
+  console.log(stair);
+
+  steps(n, step + 1);
 }
 
 module.exports = steps;
@@ -37,4 +41,20 @@ module.exports = steps;
 //   stepsArray.forEach(step => {
 //     console.log(step);
 //   });
+// }
+
+// SECOND SOLUTION
+// {
+// for (let row = 1; row <= n; row++) {
+//   let stair = '';
+
+//   for (let column = 1; column <= n; column++) {
+//     if (column <= row) {
+//       stair += '#';
+//     } else {
+//       stair += ' ';
+//     }
+//   }
+
+//   console.log(stair);
 // }
