@@ -1,21 +1,20 @@
-function steps(n, row = 0) {
-  if (row === n) {
+function steps(numberOfSteps, step = 0, string = '') {
+  if (numberOfSteps === step) {
     return;
   }
 
-  let str = '';
-
-  while (str.length !== n) {
-    if (str.length <= row) {
-      str += '#';
-    } else {
-      str += ' ';
-    }
+  if (numberOfSteps === string.length) {
+    console.log(string);
+    return steps(numberOfSteps, step + 1);
   }
 
-  console.log(str);
+  if (string.length <= step) {
+    string += '#';
+  } else {
+    string += ' ';
+  }
 
-  steps(n, row + 1);
+  steps(numberOfSteps, step, string);
 }
 
 module.exports = steps;
