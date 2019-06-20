@@ -16,7 +16,7 @@ test('prints a pyramid for n = 2', () => {
   pyramid(2);
   expect(console.log.mock.calls[0][0]).toEqual(' # ');
   expect(console.log.mock.calls[1][0]).toEqual('###');
-  expect(console.log.mock.length).toEqual(2);
+  expect(console.log.mock.calls.length).toEqual(2);
 });
 
 test('prints a pyramid for n = 3', () => {
@@ -33,4 +33,5 @@ test('prints a pyramid for n = 4', () => {
   expect(console.log.mock.calls[1][0]).toEqual('  ###  ');
   expect(console.log.mock.calls[2][0]).toEqual(' ##### ');
   expect(console.log.mock.calls[3][0]).toEqual('#######');
+  expect(console.log.mock.calls.length).toEqual(4);
 });
