@@ -1,14 +1,5 @@
 function vowels(string) {
-  let count = 0;
-  const vowelChecker = ['a', 'e', 'i', 'o', 'u'];
-
-  for (let character of string.toLowerCase()) {
-    if (vowelChecker.includes(character)) {
-      count++;
-    }
-  }
-
-  return count;
+  
 }
 
 module.exports = vowels;
@@ -31,4 +22,18 @@ module.exports = vowels;
 //     }
 //     return count;
 //   }, 0);
+// }
+
+// second solution
+// function vowels(string) {
+//   let count = 0;
+//   const vowelChecker = ['a', 'e', 'i', 'o', 'u'];
+
+//   for (let character of string.toLowerCase()) {
+//     if (vowelChecker.includes(character)) {
+//       count++;
+//     }
+//   }
+
+//   return count;
 // }
