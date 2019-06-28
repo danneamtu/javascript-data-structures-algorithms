@@ -8,11 +8,11 @@ class Queue {
   }
 
   remove() {
-    this.data.pop();
+    return this.data.pop();
   }
 
   peek() {
-    this.data.slice(-1);
+    return this.data[this.data.length - 1];
   }
 }
 
