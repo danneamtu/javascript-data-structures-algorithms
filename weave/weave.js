@@ -6,6 +6,7 @@ function weave(sourceOne, sourceTwo) {
   // weave.add(sourceOne.peek())
 
   // create a copy of sourceone and source two
+  // Linear runtime complexity
 
   while (sourceOne.peek() !== undefined && sourceTwo.peek() !== undefined) {
     if (sourceOne.peek() !== undefined) {
