@@ -10,4 +10,10 @@ class Queue {
   remove() {
     this.data.pop();
   }
+
+  peek() {
+
+  }
 }
+
+module.exports = Queue
