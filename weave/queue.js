@@ -12,8 +12,8 @@ class Queue {
   }
 
   peek() {
-
+    this.data.slice(-1);
   }
 }
 
-module.exports = Queue
+module.exports = Queue;
