@@ -19,7 +19,21 @@ class Stack {
 }
 
 class Queue {
-  
+  constructor() {
+    this.stack = new Stack();
+  }
+
+  add(record) {
+    this.stack.data.push(record);
+  }
+
+  remove() {
+    return this.stack.data.shift();
+  }
+
+  peek() {
+    return this.stack.data[0];
+  }
 }
 
 module.exports = Queue;
