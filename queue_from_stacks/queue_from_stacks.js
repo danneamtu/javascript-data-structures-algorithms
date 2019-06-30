@@ -41,6 +41,20 @@ class Queue {
 
     return removedRecord;
   }
+
+  peek() {
+    while (this.aStack.peek() !== undefined) {
+      this.bStack.push(this.aStack.pop());
+    }
+
+    const peekedRecord = this.bStack.peek();
+
+    while (this.bStack.peek() !== undefined) {
+      this.aStack.push(this.bStack.pop());
+    }
+
+    return peekedRecord;
+  }
 }
 
 module.exports = Queue;
