@@ -20,19 +20,26 @@ class Stack {
 
 class Queue {
   constructor() {
-    this.stack = new Stack();
+    this.aStack = new Stack();
+    this.bStack = new Stack();
   }
 
   add(record) {
-    this.stack.data.push(record);
+    this.aStack.push(record);
   }
 
   remove() {
-    return this.stack.data.shift();
-  }
+    while (this.aStack.peek() !== undefined) {
+      this.bStack.push(this.aStack.pop());
+    }
 
-  peek() {
-    return this.stack.data[0];
+    const removedRecord = this.bStack.pop();
+
+    while (this.bStack.peek() !== undefined) {
+      this.aStack.push(this.bStack.pop());
+    }
+
+    return removedRecord;
   }
 }
 
