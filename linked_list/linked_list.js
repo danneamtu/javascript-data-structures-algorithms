@@ -11,9 +11,7 @@ class LinkedList {
   }
 
   insertFirst(record) {
-    let currentHeadNode = new Node(this.head);
-    let newHeadNode = new Node(record, currentHeadNode);
-    this.head = newHeadNode;
+    this.head = new Node(record, this.head);
   }
 }
 
