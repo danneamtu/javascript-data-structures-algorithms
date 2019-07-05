@@ -27,3 +27,15 @@ describe('Insert First', () => {
     expect(l.head.data).toEqual(2);
   });
 });
+
+describe('Size', () => {
+  test('returns the number of items in a linked list', () => {
+    const l = new List();
+    expect(l.size()).toEqual(0);
+    l.insertFirst(1);
+    l.insertFirst(1);
+    l.insertFirst(1);
+    l.insertFirst(1);
+    expect(l.size()).toEqual(4);
+  });
+});
