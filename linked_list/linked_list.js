@@ -15,19 +15,15 @@ class LinkedList {
   }
 
   size() {
+    let counter = 0;
     let node = this.head;
 
-    if (node === null) {
-      return 0;
-    }
-
-    let count = this.head ? 1 : 0;
-    while (node.next !== null) {
-      count++;
+    while (node) {
+      counter++;
       node = node.next;
     }
 
-    return count;
+    return counter;
   }
 }
 
