@@ -39,3 +39,13 @@ describe('Size', () => {
     expect(l.size()).toEqual(4);
   });
 });
+
+describe('GetFirst', () => {
+  test('returns the first element', () => {
+    const l = new List();
+    l.insertFirst(1);
+    expect(l.getFirst().data).toEqual(1);
+    l.insertFirst(2);
+    expect(l.getFirst().data).toEqual(2);
+  });
+});
