@@ -46,6 +46,7 @@ class LinkedList {
 
     let node = this.head;
     while (node) {
+      // this solution removes one last iteration when the last node.next is null
       if (!node.next) {
         return node;
       }
