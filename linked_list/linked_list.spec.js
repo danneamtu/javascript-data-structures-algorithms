@@ -63,4 +63,18 @@ describe('getLast', () => {
     expect(l.getLast().data).toEqual(1);
     expect(l.getLast()).toEqual({data: 1, next: null});
   });
+
+  describe('clear', () => {
+    test('removes all elements from list', () => {
+      const l = new List();
+      expect(l.size()).toEqual(0);
+      l.insertFirst(1);
+      l.insertFirst(1);
+      l.insertFirst(1);
+      l.insertFirst(1);
+      expect(l.size()).toEqual(4);
+      l.clear();
+      expect(l.size()).toEqual(0);
+    });
+  });
 });
