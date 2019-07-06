@@ -31,13 +31,24 @@ class LinkedList {
   }
 
   getLast() {
-    let last = this.head;
+    // let last = this.head;
 
-    while (last.next) {
-      last = last.next;
+    // while (last.next) {
+    //   last = last.next;
+    // }
+
+    // return last;
+    if (!this.head) {
+      return null;
     }
 
-    return last;
+    let node = this.head;
+    while (node) {
+      if (!node.next) {
+        return node;
+      }
+      node = node.next;
+    }
   }
 }
 
