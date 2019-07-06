@@ -31,27 +31,21 @@ class LinkedList {
   }
 
   getLast() {
-    // let last = this.head;
-
-    // while (last.next) {
-    //   last = last.next;
-    // }
-
-    // return last;
-
-    // this solution removes one last iteration when the last node.next is null
     if (!this.head) {
       return null;
     }
 
     let node = this.head;
     while (node) {
-      // this solution removes one last iteration when the last node.next is null
       if (!node.next) {
         return node;
       }
       node = node.next;
     }
+  }
+
+  clear() {
+    this.head = null;
   }
 }
 
