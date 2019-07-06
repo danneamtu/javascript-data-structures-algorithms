@@ -55,9 +55,12 @@ describe('getLast', () => {
     const l = new List();
     l.insertFirst(1);
     expect(l.getLast().data).toEqual(1);
+    expect(l.getLast()).toEqual({data: 1, next: null});
     l.insertFirst(2);
     expect(l.getLast().data).toEqual(1);
+    expect(l.getLast()).toEqual({data: 1, next: null});
     l.insertFirst(3);
     expect(l.getLast().data).toEqual(1);
+    expect(l.getLast()).toEqual({data: 1, next: null});
   });
 });
