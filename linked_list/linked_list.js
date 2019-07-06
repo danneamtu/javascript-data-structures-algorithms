@@ -38,6 +38,8 @@ class LinkedList {
     // }
 
     // return last;
+
+    // this solution removes one last iteration when the last node.next is null
     if (!this.head) {
       return null;
     }
