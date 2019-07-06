@@ -40,12 +40,24 @@ describe('Size', () => {
   });
 });
 
-describe('GetFirst', () => {
+describe('getFirst', () => {
   test('returns the first element', () => {
     const l = new List();
     l.insertFirst(1);
     expect(l.getFirst().data).toEqual(1);
     l.insertFirst(2);
     expect(l.getFirst().data).toEqual(2);
+  });
+});
+
+describe('getLast', () => {
+  test('returns the last element', () => {
+    const l = new List();
+    l.insertFirst(1);
+    expect(l.getLast().data).toEqual(1);
+    l.insertFirst(2);
+    expect(l.getLast().data).toEqual(1);
+    l.insertFirst(3);
+    expect(l.getLast().data).toEqual(1);
   });
 });
