@@ -87,4 +87,20 @@ describe('getLast', () => {
       expect(l.getFirst()).toEqual(null);
     });
   });
+
+  describe('removeLast', () => {
+    test('removes last node from list, when list is empty', () => {
+      const l = new List();
+      expect(() => {
+        l.removeLast();
+      }).not.toThrow();
+    });
+
+    test('removes last node form list, when list length is 1', () => {
+      const l = new List();
+      l.insertFirst('a');
+      l.removeLast();
+      expect(l.head).toEqual(null);
+    });
+  });
 });
