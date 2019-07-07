@@ -63,11 +63,11 @@ class LinkedList {
       this.head = null;
       return;
     }
-    
+
     let previousNode = this.head;
     let currentNode = this.head.next;
 
-    while (previousNode && currentNode.next !== null) {
+    while (currentNode.next !== null) {
       previousNode = currentNode;
       currentNode = currentNode.next;
     }
