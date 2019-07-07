@@ -29,7 +29,7 @@ describe('Insert First', () => {
 });
 
 describe('Size', () => {
-  test('returns the number of items in a linked list', () => {
+  test('returns the number of nodes in a linked list', () => {
     const l = new List();
     expect(l.size()).toEqual(0);
     l.insertFirst(1);
@@ -41,7 +41,7 @@ describe('Size', () => {
 });
 
 describe('getFirst', () => {
-  test('returns the first element', () => {
+  test('returns the first node', () => {
     const l = new List();
     l.insertFirst(1);
     expect(l.getFirst().data).toEqual(1);
@@ -51,7 +51,7 @@ describe('getFirst', () => {
 });
 
 describe('getLast', () => {
-  test('returns the last element', () => {
+  test('returns the last node', () => {
     const l = new List();
     l.insertFirst(1);
     expect(l.getLast().data).toEqual(1);
@@ -65,7 +65,7 @@ describe('getLast', () => {
   });
 
   describe('clear', () => {
-    test('removes all elements from list', () => {
+    test('removes all nodes from list', () => {
       const l = new List();
       expect(l.size()).toEqual(0);
       l.insertFirst(1);
@@ -75,6 +75,16 @@ describe('getLast', () => {
       expect(l.size()).toEqual(4);
       l.clear();
       expect(l.size()).toEqual(0);
+    });
+  });
+
+  describe('removeFirst', () => {
+    test('removes first node from list', () => {
+      const l = new List();
+      l.insertFirst('a');
+      l.removeFirst();
+      expect(l.size()).toEqual(0);
+      expect(l.getFirst()).toEqual(null);
     });
   });
 });
