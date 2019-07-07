@@ -76,13 +76,14 @@ class LinkedList {
   }
 
   insertLast(record) {
+    const last = this.getLast();
     const node = new Node(record);
-    if (!this.getLast()) {
-      this.head = node;
-      return;
-    }
 
-    this.getLast().next = node;
+    if (last) {
+      last.next = node;
+    } else {
+      this.head = node;
+    }
   }
 }
 
