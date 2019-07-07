@@ -119,7 +119,7 @@ describe('getLast', () => {
       l.insertFirst('a');
       l.removeLast();
       expect(l.size()).toEqual(2);
-      expect(l.getLast()).toEqual('b');
+      expect(l.getLast().data).toEqual('b');
       expect(l.head.data).toEqual('a');
     });
   });
