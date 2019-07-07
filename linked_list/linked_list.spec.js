@@ -123,4 +123,14 @@ describe('getLast', () => {
       expect(l.head.data).toEqual('a');
     });
   });
+
+  describe('insertLast', () => {
+    test('inserts a node to the end of the list', () => {
+      const l = new List();
+      l.insertFirst('a');
+      l.insertLast('b');
+      expect(l.size()).toEqual(2);
+      expect(l.getLast().data).toEqual('b');
+    });
+  });
 });
