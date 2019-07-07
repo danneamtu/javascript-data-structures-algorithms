@@ -96,11 +96,31 @@ describe('getLast', () => {
       }).not.toThrow();
     });
 
-    test('removes last node form list, when list length is 1', () => {
+    test('removes last node from list, when list length is 1', () => {
       const l = new List();
       l.insertFirst('a');
       l.removeLast();
       expect(l.head).toEqual(null);
+    });
+
+    test('removes last node from list, when list is length 2', () => {
+      const l = new List();
+      l.insertFirst('b');
+      l.insertFirst('a');
+      l.removeLast();
+      expect(l.size()).toEqual(1);
+      expect(l.head.data).toEqual('a');
+    });
+
+    test('removes last node from list, when list is length 3', () => {
+      const l = new List();
+      l.insertFirst('c');
+      l.insertFirst('b');
+      l.insertFirst('a');
+      l.removeLast();
+      expect(l.size()).toEqual(2);
+      expect(l.getLast()).toEqual('b');
+      expect(l.head.data).toEqual('a');
     });
   });
 });
