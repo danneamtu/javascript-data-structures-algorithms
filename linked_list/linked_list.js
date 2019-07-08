@@ -88,22 +88,22 @@ class LinkedList {
 
   getAt(index) {
     if (this.head === null) {
-      return this.head;
+      return null;
     }
 
-    if (index === 0) {
-      return this.head;
-    }
+    let counter = 0;
+    let node = this.head;
 
-    let counter = 1;
-    let node = this.head.next;
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
 
-    while (counter !== index && node !== null) {
-      node = node.next;
       counter++;
+      node = node.next;
     }
 
-    return node;
+    return null;
   }
 }
 
