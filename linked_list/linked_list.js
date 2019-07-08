@@ -87,10 +87,6 @@ class LinkedList {
   }
 
   getAt(index) {
-    if (this.head === null) {
-      return null;
-    }
-
     let counter = 0;
     let node = this.head;
 
