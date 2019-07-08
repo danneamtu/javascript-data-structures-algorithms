@@ -87,6 +87,10 @@ class LinkedList {
   }
 
   getAt(index) {
+    if (this.head === null) {
+      return this.head;
+    }
+
     if (index === 0) {
       return this.head;
     }
