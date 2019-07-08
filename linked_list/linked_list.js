@@ -98,7 +98,7 @@ class LinkedList {
     let counter = 1;
     let node = this.head.next;
 
-    while (counter !== index) {
+    while (counter !== index && node !== null) {
       node = node.next;
       counter++;
     }
