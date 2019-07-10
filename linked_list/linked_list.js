@@ -103,9 +103,7 @@ class LinkedList {
   }
 
   removeAt(index) {
-    const node = this.getAt(index);
-
-    if (node === null) {
+    if (this.head === null) {
       return null;
     }
 
