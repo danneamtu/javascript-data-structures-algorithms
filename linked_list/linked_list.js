@@ -112,7 +112,11 @@ class LinkedList {
       return;
     }
 
-    this.getAt(index - 1).next = this.getAt(index + 1);
+    const previous = this.getAt(index - 1);
+    if (!previous || !previous.next) {
+      return;
+    }
+    previous.next = previous.next.next;
   }
 }
 
