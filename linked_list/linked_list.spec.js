@@ -189,5 +189,16 @@ describe('getLast', () => {
       l.removeAt(1);
       expect(l.getAt(1).data).toEqual(3);
     });
+
+    test('removeAt works on the last node', () => {
+      const l = new List();
+      l.insertLast(1);
+      l.insertLast(2);
+      l.insertLast(3);
+      l.insertLast(4);
+      expect(l.getAt(3).data).toEqual(4);
+      l.removeAt(3);
+      expect(l.getAt(3)).toEqual(null);
+    });
   });
 });
