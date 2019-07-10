@@ -148,4 +148,24 @@ describe('getLast', () => {
       expect(l.getAt(3).data).toEqual(4);
     });
   });
+
+  describe('removeAt', () => {
+    test('removeAt doesnt crash on an empty list', () => {
+      const l = new List();
+      expect(() => {
+        l.removeAt(0);
+        l.removeAt(1);
+        l.removeAt(2);
+      }).not.toThrow();
+    });
+
+    test('removeAt doesnt crash on an index out of bounds', () => {
+      const l = new List();
+      expect(() => {
+        const l = new List();
+        l.insertFirst('a');
+        l.removeAt(1);
+      }).not.toThrow();
+    });
+  });
 });
