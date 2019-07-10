@@ -108,7 +108,7 @@ class LinkedList {
     }
 
     if (index === 0) {
-      this.head = this.getAt(index + 1);
+      this.head = this.head.next;
       return;
     }
 
