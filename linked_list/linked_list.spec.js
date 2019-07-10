@@ -208,5 +208,17 @@ describe('getLast', () => {
       l.insertAt('hi', 0);
       expect(l.getFirst().data).toEqual('hi');
     });
+
+    test('inserts a new node with data at the 0 index when the list already has nodes', () => {
+      const l = new List();
+      l.insertLast('a');
+      l.insertLast('b');
+      l.insertLast('c');
+      l.insertAt('hi', 0);
+      expect(l.getAt(0).data).toEqual('hi');
+      expect(l.getAt(1).data).toEqual('a');
+      expect(l.getAt(2).data).toEqual('b');
+      expect(l.getAt(3).data).toEqual('c');
+    });
   });
 });
