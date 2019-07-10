@@ -167,5 +167,16 @@ describe('getLast', () => {
         l.removeAt(1);
       }).not.toThrow();
     });
+
+    test('removeAt deletes the first node', () => {
+      const l = new List();
+      l.insertLast(1);
+      l.insertLast(2);
+      l.insertLast(3);
+      l.insertLast(4);
+      expect(l.getAt(0).data).toEqual(1);
+      l.removeAt(0);
+      expect(l.getAt(0).data).toEqual(2);
+    });
   });
 });
