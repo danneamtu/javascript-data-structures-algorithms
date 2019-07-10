@@ -178,5 +178,16 @@ describe('getLast', () => {
       l.removeAt(0);
       expect(l.getAt(0).data).toEqual(2);
     });
+
+    test('removeAt deletes the node at given index', () => {
+      const l = new List();
+      l.insertLast(1);
+      l.insertLast(2);
+      l.insertLast(3);
+      l.insertLast(4);
+      expect(l.getAt(1).data).toEqual(2);
+      l.removeAt(1);
+      expect(l.getAt(1).data).toEqual(3);
+    });
   });
 });
