@@ -201,4 +201,12 @@ describe('getLast', () => {
       expect(l.getAt(3)).toEqual(null);
     });
   });
+
+  describe('insertAt', () => {
+    test('inserts a new node with data at the 0 index when the list is empty', () => {
+      const l = new List();
+      l.insertAt('hi', 0);
+      expect(l.getFirst().data).toEqual('hi');
+    });
+  });
 });
