@@ -120,19 +120,13 @@ class LinkedList {
   }
 
   insertAt(data, index) {
-    let node = {
-      data,
-      next: null,
-    };
-
     if (this.head === null) {
-      this.head = node;
+      this.head = new Node(data);
       return;
     }
 
     if (index === 0) {
-      node.next = this.head;
-      this.head = node;
+      this.head = new Node(data, this.head);
       return;
     }
 
@@ -140,8 +134,7 @@ class LinkedList {
       this.insertLast(data);
       return;
     } else {
-      node.next = this.getAt(index);
-      this.getAt(index - 1).next = node;
+      this.getAt(index - 1).next = new Node(data, this.getAt(index));
       return;
     }
   }
