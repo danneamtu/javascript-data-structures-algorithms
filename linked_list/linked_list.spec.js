@@ -252,7 +252,7 @@ describe('getLast', () => {
       l.insertAt('hi', 30);
       expect(l.getAt(0).data).toEqual('a');
       expect(l.getAt(1).data).toEqual('b');
-      expect(l.getAt(3).data).toEqual('hi');
+      expect(l.getAt(2).data).toEqual('hi');
     });
   });
 });
