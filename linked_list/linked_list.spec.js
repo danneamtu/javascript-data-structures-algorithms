@@ -244,5 +244,15 @@ describe('getLast', () => {
       expect(l.getAt(1).data).toEqual('b');
       expect(l.getAt(2).data).toEqual('hi');
     });
+
+    test('insert a new node when index is out of bounds', () => {
+      const l = new List();
+      l.insertLast('a');
+      l.insertLast('b');
+      l.insertAt('hi', 30);
+      expect(l.getAt(0).data).toEqual('a');
+      expect(l.getAt(1).data).toEqual('b');
+      expect(l.getAt(3).data).toEqual('hi');
+    });
   });
 });
