@@ -130,13 +130,9 @@ class LinkedList {
       return;
     }
 
-    if (this.getAt(index) === null) {
-      this.insertLast(data);
-      return;
-    } else {
-      this.getAt(index - 1).next = new Node(data, this.getAt(index));
-      return;
-    }
+    const previous = this.getAt(index - 1) || this.getLast();
+    const node = new Node(data, previous.next);
+    previous.next = node;
   }
 }
 
