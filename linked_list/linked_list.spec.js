@@ -234,5 +234,15 @@ describe('getLast', () => {
       expect(l.getAt(3).data).toEqual('c');
       expect(l.getAt(4).data).toEqual('d');
     });
+
+    test('inserts a new node with data at a last index', () => {
+      const l = new List();
+      l.insertLast('a');
+      l.insertLast('b');
+      l.insertAt('hi', 2);
+      expect(l.getAt(0).data).toEqual('a');
+      expect(l.getAt(1).data).toEqual('b');
+      expect(l.getAt(2).data).toEqual('hi');
+    });
   });
 });
