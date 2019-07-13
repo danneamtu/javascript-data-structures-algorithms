@@ -3,9 +3,9 @@ function fromLast(list, n) {
   let fast = list.head;
   let count = 0;
 
-  while (count < n) {
+  while (n > 0) {
     fast = fast.next;
-    count++;
+    n--;
   }
 
   while (fast.next !== null) {
