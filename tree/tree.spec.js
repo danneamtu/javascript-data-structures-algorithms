@@ -19,4 +19,12 @@ describe('Node', () => {
     expect(n.children.length).toEqual(1);
     expect(n.children[0].children).toEqual([]);
   });
+
+  test('Node can remove children', () => {
+    const n = new Node('a');
+    n.add('b');
+    expect(n.children.length).toEqual(1);
+    n.remove('b');
+    expect(n.children.length).toEqual(0);
+  });
 });
