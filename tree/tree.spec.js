@@ -49,4 +49,19 @@ describe('tree', () => {
 
     expect(letters).toEqual(['a', 'b', 'c', 'd']);
   });
+
+  test('Depth First Traversal', () => {
+    const letters = [];
+    const t = new Tree();
+    t.root = new Node('a');
+    t.root.add('b');
+    t.root.add('d');
+    t.root.children[0].add('c');
+
+    t.traverseDF((node) => {
+      letters.push(node.data);
+    });
+
+    expect(letters).toEqual(['a', 'b', 'c', 'd']);
+  });
 });
