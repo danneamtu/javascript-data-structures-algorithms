@@ -22,12 +22,11 @@ class Tree {
   }
 
   traverseBF(fn) {
-    const temp = [];
-    temp.push(this.root);
+    const temp = [this.root];
     while (temp.length > 0) {
-      fn(temp[0]);
-      temp.push(...temp[0].children);
-      temp.shift();
+      const node = temp.shift();
+      temp.push(...node.children);
+      fn(node);
     }
   }
 }
