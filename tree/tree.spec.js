@@ -28,3 +28,25 @@ describe('Node', () => {
     expect(n.children.length).toEqual(0);
   });
 });
+
+describe('tree', () => {
+  test('starts empty', () => {
+    const t = new Tree();
+    expect(t.root).toEqual(null);
+  });
+
+  test('Breadth First Traversal', () => {
+    const letters = [];
+    const t = new Tree();
+    t.root = new Node('a');
+    t.root.add('b');
+    t.root.add('c');
+    t.root.children[0].add('d');
+
+    t.traverseBF((node) => {
+      letters.push(node.data);
+    });
+
+    expect(letters).toEqual(['a', 'b', 'c', 'd']);
+  });
+});
