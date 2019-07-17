@@ -29,6 +29,15 @@ class Tree {
       fn(node);
     }
   }
+
+  traverseDF(fn) {
+    let temp = [this.root];
+    while (temp.length > 0) {
+      const node = temp.shift();
+      temp = [...node.children, ...temp];
+      fn(node);
+    }
+  }
 }
 
 module.exports = {Tree, Node};
