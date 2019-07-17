@@ -31,10 +31,10 @@ class Tree {
   }
 
   traverseDF(fn) {
-    let temp = [this.root];
+    const temp = [this.root];
     while (temp.length > 0) {
       const node = temp.shift();
-      temp = [...node.children, ...temp];
+      temp.unshift(...node.children);
       fn(node);
     }
   }
