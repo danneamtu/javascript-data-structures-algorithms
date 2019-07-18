@@ -9,6 +9,9 @@ class Node {
   }
 }
 
-function levelWidth() {}
+function levelWidth(root) {
+  const arr = [root, 's'];
+  const counters = [0];
+}
 
 module.exports = {Node, levelWidth};
