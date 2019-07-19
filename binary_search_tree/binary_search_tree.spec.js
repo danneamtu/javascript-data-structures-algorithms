@@ -27,3 +27,15 @@ test('contains - returns node with the same data', () => {
   const three = node.left.left.right;
   expect(node.contains(3)).toEqual(three);
 });
+
+test('contains - returns null if value not found', () => {
+  const node = new Node(10);
+  node.insert(5);
+  node.insert(15);
+  node.insert(20);
+  node.insert(0);
+  node.insert(-5);
+  node.insert(3);
+
+  expect(node.contains(9999)).toEqual(null);
+});
