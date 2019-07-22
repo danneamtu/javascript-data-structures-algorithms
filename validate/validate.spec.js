@@ -1,5 +1,4 @@
-const Node = require('./validate')
-const validate = require('./validate')
+const {Node, validate} = require('./validate')
 
 test('validate recognizes a valid Binary Search Tree', () => {
     const n = new Node(10)
