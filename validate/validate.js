@@ -1,23 +1,26 @@
 class Node {
   constructor(data) {
-    this.data = data
-    this.left = null
-    this.right = null
+    this.data = data;
+    this.left = null;
+    this.right = null;
   }
 
   insert(data) {
     if (data < this.data && this.left) {
-      this.left.insert(data)
+      this.left.insert(data);
     } else if (data < this.data) {
-      this.left = new Node(data)
+      this.left = new Node(data);
     } else if (data > this.data && this.right) {
-      this.right.insert(data)
-    } else if (data < this.data)
-      this.right = new Node(data)
+      this.right.insert(data);
+    } else if (data < this.data) {
+      this.right = new Node(data);
+    }
   }
 }
 
 function validate(node) {
+  let max = node.data;
+  let min = null;
 
 }
 
