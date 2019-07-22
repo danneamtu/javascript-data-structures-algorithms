@@ -5,7 +5,7 @@ function getArray() {
 }
 
 function getSortedArray() {
-  return [-124, -40, 0, 7, 21, 122, 500];
+  return [-124, -40, 0, 7, 21, 100, 500];
 }
 
 describe('bubble sort', () => {
