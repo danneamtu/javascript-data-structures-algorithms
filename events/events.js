@@ -1,10 +1,22 @@
 class Events {
-  on(eventName, callback) {
+  constructor() {
+    this.events = {};
+  }
 
+  on(eventName, callback) {
+    if (this.events[eventName]) {
+      this.events[eventName].push(callback);
+    } else {
+      this.events[eventName] = [callback];
+    }
   }
 
   trigger(eventName) {
-
+    if (this.events[eventName]) {
+      for (let callback of this.events[eventName]) {
+        callback();
+      }
+    }
   }
 
   off(eventName) {
@@ -12,4 +24,4 @@ class Events {
   }
 }
 
-module.exports = { Events }
+module.exports = Events;
