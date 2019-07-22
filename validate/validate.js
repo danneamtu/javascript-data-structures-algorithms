@@ -12,14 +12,14 @@ class Node {
       this.left = new Node(data);
     } else if (data > this.data && this.right) {
       this.right.insert(data);
-    } else if (data < this.data) {
+    } else if (data > this.data) {
       this.right = new Node(data);
     }
   }
 }
 
 function validate(node, min = null, max = null) {
-  if (max !== null && node.data < max) {
+  if (max !== null && node.data > max) {
     return false;
   }
 
