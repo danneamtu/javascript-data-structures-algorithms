@@ -6,4 +6,4 @@ function validate(node) {
 
 }
 
-module.exports = {Node, validate}
+module.exports = { Node, validate }
