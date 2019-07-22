@@ -10,4 +10,8 @@ function bubbleSort(arr) {
   return arr;
 };
 
-module.exports = { bubbleSort };
+function selectionSort(arr) {
+
+};
+
+module.exports = { bubbleSort, selectionSort };
