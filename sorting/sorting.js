@@ -28,6 +28,10 @@ function selectionSort(arr) {
   return arr;
 };
 
+function mergeSort(arr) {
+
+}
+
 function merge(left, right) {
   let result = [];
 
@@ -36,10 +40,10 @@ function merge(left, right) {
       result.push(left.shift());
     } else {
       result.push(right.shift());
-    }
-  }
+    };
+  };
 
   return [...result, ...left, ...right];
-}
+};
 
-module.exports = { bubbleSort, selectionSort, merge };
+module.exports = { bubbleSort, selectionSort, mergeSort, merge };
