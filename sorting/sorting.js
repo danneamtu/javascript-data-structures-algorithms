@@ -39,9 +39,7 @@ function merge(left, right) {
     }
   }
 
-  result.push(...left, ...right);
-
-  return result;
+  return [...result, ...left, ...right];
 }
 
 module.exports = { bubbleSort, selectionSort, merge };
