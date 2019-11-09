@@ -17,4 +17,15 @@ const twoSum = (nums, target) => {
   return results;
 };
 
-console.log(twoSum([2, 7, 11, 15], 9)) // [0,1]
+const twoSum_linear = (nums, target) => {
+  const hash = {};
+
+  for (let i = 0; i < nums.length; i++) {
+    if (hash[nums[i]] >= 0) {
+      return [hash[nums[i]], i];
+    }
+    hash[target - nums[i]] = i;
+  }
+};
+
+console.log(twoSum_linear([2, 7, 11, 15], 9)); // [0,1]
