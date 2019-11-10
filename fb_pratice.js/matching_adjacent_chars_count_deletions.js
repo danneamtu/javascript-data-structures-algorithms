@@ -12,3 +12,7 @@ function alternatingCharacters(s) {
   }
   return totalDeletions;
 }
+
+
+// time complexity - O(n) where n is the length of the string
+// space complexity - O(1) because we are not creating a new data structure
