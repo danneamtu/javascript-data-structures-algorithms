@@ -1,4 +1,4 @@
-const intersection = (nums1, nums2) => {
+const intersection_first_solution = (nums1, nums2) => {
   const table = {};
   const result_table = {};
   const result = [];
@@ -22,6 +22,19 @@ const intersection = (nums1, nums2) => {
   }
 
   return result;
+};
+
+const intersection = (arr1, arr2) => {
+  let set = new Set(arr1);
+  let result = new Set();
+
+  for (let i = 0; i < arr2.length; i++) {
+    if (set.has(arr2[i])) {
+      result.add(arr2[i]);
+    }
+  }
+
+  return Array.from(result);
 };
 
 console.log(intersection([1, 2, 2, 1], [2, 2])); // [2]
