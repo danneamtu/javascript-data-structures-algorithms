@@ -1,13 +1,18 @@
 const minDepth = root => {
   if (!root) return 0;
-  let result;
-  function minHeight(root, depth) {
-    if (!root.left && !root.right) {
-      result = Math.min(result || depth, depth);
+
+  const queue = [{ node: root, height: 1 }];
+
+  while (queue.length) {
+    let current = queue.shift();
+
+    if (!current.node.left && !current.node.right) {
+      return current.height;
     }
-    if (root.left) minHeight(root.left, depth + 1);
-    if (root.right) minHeight(root.right, depth + 1);
+
+    if (current.node.left)
+      queue.push({ node: current.node.left, height: current.height + 1 });
+    if (current.node.right)
+      queue.push({ node: current.node.right, height: current.height + 1 });
   }
-  minHeight(root, 1);
-  return result;
 };
