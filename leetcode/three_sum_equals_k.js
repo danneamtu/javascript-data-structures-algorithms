@@ -33,3 +33,8 @@ const threeSum = (nums, target) => {
 };
 
 console.log(threeSum([-1, 0, 1, 2, -1, -4], 0));
+
+// time complexity of O(n^2) where n is the length of the input array
+// there is a sort that is O(n log n), which is less than O(n^2) that does not affect the time complexity
+
+// space complexity of O(n) where n is the length of the results.
