@@ -31,7 +31,7 @@ function shortestCellPath(grid, sr, sc, tr, tc) {
   }
 
   return -1;
-}
+} 
 
 
 // time complexity of O(R * C), where we visit every element and mark them as visited
