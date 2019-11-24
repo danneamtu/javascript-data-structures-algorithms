@@ -32,3 +32,7 @@ function shortestCellPath(grid, sr, sc, tr, tc) {
 
   return -1;
 }
+
+
+// time complexity of O(R * C), where we visit every element and mark them as visited
+// space complexity of O(R * C), since we are storing elements in queue and visited
