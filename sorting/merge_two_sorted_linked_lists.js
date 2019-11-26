@@ -1,7 +1,10 @@
 function mergeLinkedLists(headOne, headTwo) {
-  let p1 = headOne;
   let prev = null;
+  let p1 = headOne;
   let p2 = headTwo;
+
+  // 3 -> 9 -> 12
+  // 1 -> 4 -> 6
 
   while (p1 && p2) {
     if (p1.value < p2.value) {
