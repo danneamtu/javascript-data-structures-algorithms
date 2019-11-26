@@ -5,6 +5,7 @@ function shortestCellPath(grid, sr, sc, tr, tc) {
 
   while (queue.length) {
     const [r, c, depth] = queue.shift();
+
     if (r === tr && c === tc) {
       return depth;
     }
@@ -13,9 +14,10 @@ function shortestCellPath(grid, sr, sc, tr, tc) {
       [r - 1, c],
       [r + 1, c],
       [r, c - 1],
-      [r, c + 1]
+      [r, c + 1],
     ]) {
       let newVisited = `${nr}${nc}`;
+
       if (
         nr >= 0 &&
         nr < grid.length &&
@@ -31,8 +33,7 @@ function shortestCellPath(grid, sr, sc, tr, tc) {
   }
 
   return -1;
-} 
-
+}
 
 // time complexity of O(R * C), where we visit every element and mark them as visited
 // space complexity of O(R * C), since we are storing elements in queue and visited
