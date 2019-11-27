@@ -9,7 +9,7 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
   // Served Orders: [1, 2, 3, 5, 4, 6]
 
   for (let i = 0; i < servedOrders.length; i++) {
-    const order = serverdOrders[i];
+    const order = servedOrders[i];
 
     if (t <= maxT && order === takeOutOrders[t]) {
       t += 1;
@@ -20,12 +20,16 @@ function isFirstComeFirstServed(takeOutOrders, dineInOrders, servedOrders) {
     }
   }
 
-  if (t !== takeOurOrders.length || d !== dineInOrders.length) {
+  if (t !== takeOutOrders.length || d !== dineInOrders.length) {
     return false;
   }
 
   return true;
 }
+
+console.log(isFirstComeFirstServed([1, 4, 5], [2, 3, 6], [1, 2, 3, 4, 5, 6])); // true
+console.log(isFirstComeFirstServed([1, 5], [2, 3, 6], [1, 2, 6, 3, 5])); // false
+console.log(isFirstComeFirstServed([55, 9], [7, 8], [1, 7, 8, 9])); // false
 
 // time complexity of O(s), where s is the length of serverdOrders.
 // space complexity of O(1), since there was not an additional data structure used.
