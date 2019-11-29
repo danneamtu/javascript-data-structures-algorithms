@@ -1,8 +1,13 @@
+// time complexity O(n), where n is the length of input string
+// space complexity O(n), where n is the length of the returned new_string
+
 function caesarCipherEncryptor(string, key) {
-  let new_string = "";
+  let new_string = '';
+
   for (let i = 0; i < string.length; i++) {
     new_string += getNewLetter(string[i], key % 26);
   }
+
   return new_string;
 }
 
@@ -16,6 +21,4 @@ function getNewLetter(letter, key) {
   }
 }
 
-// time complexity O(n), where n is the length of the string input
-// space complexity O(n), where n is the new_string string
-
+module.exports = {caesarCipherEncryptor, getNewLetter};
