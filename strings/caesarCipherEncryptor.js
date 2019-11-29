@@ -1,5 +1,5 @@
-// time complexity O(n), where n is the length of input string
-// space complexity O(n), where n is the length of the returned new_string
+// time complexity O(n) - Where n is the length of input string.
+// space complexity O(n) - Where n is the length of the returned new_string.
 
 function caesarCipherEncryptor(string, key) {
   let new_string = '';
