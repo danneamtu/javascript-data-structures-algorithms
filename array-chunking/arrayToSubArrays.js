@@ -1,16 +1,20 @@
-function chunk(array, size) {
-  const chunked = [];
-  let index = 0;
+function arrayToSubArrays(array, size) {
+  const result = [[]];
 
-  while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
-    index += size;
+  for (let element of array) {
+    const popped = result[result.length - 1];
+
+    if (popped.length === size) {
+      result.push([element]);
+    } else {
+      popped.push(element);
+    }
   }
 
-  return chunked;
+  return result;
 }
 
-module.exports = chunk;
+module.exports = {arrayToSubArrays};
 
 // FIRST SOLUTION:
 // function chunk(array, size) {
