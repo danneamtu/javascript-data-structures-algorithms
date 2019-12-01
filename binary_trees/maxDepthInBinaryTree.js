@@ -1,4 +1,7 @@
-const maxDepth = root => {
+// Time complexity of O(n) - Where n is the number of nodes in the Tree.
+// Space complexity of O(n) - Where a Queue was used.
+
+const maxDepth = (root) => {
   if (!root) {
     return 0;
   }
@@ -26,7 +29,3 @@ const maxDepth = root => {
 
   return depth;
 };
-
-
-// time complexity of O(n), where n is the number of nodes in the tree;
-// space complexity of O(n), where a Queue was used.
