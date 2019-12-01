@@ -1,14 +1,8 @@
-/*
- * Complete the 'threeNumberSum' function below.
- *
- * The function is expected to return a 2D_INTEGER_ARRAY.
- * The function accepts following parameters:
- *  1. INTEGER_ARRAY arr
- *  2. INTEGER target
- */
+// time complexity of O(n^2) - Where n is the length of the array.
+// space complexity of O(n) - where n is the length of the results array.
 
 function threeNumberSum(arr, target) {
-  arr.sort((a, b) => a - b);
+  arr.sort((a, b) => a - b); // O(n log n)
 
   const triplets = [];
 
