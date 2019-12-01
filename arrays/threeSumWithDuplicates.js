@@ -1,7 +1,7 @@
-// time complexity of O(n^2) - Where n is the length of the array.
-// space complexity of O(n) - where n is the length of the results array.
+// Time complexity of O(n^2) - Where n is the length of the array.
+// Space complexity of O(n) - where n is the length of the results array.
 
-function threeNumberSum(arr, target) {
+const threeNumberSum = (arr, target) => {
   arr.sort((a, b) => a - b); // O(n log n)
 
   const triplets = [];
@@ -26,4 +26,4 @@ function threeNumberSum(arr, target) {
   }
 
   return triplets;
-}
+};
