@@ -1,3 +1,6 @@
+// Time complexity of O(n) - Where n is the number of nodes in the Tree.
+// Space complexity of O(n) - Where n is the length of the returned results array.
+
 const averageOfLevels = root => {
   const queue = [root];
   const result = [];
