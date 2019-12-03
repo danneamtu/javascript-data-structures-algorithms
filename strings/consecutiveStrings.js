@@ -16,6 +16,10 @@ If n = 0, or k > n, or k <= 0, then return "" (an empty string).
 
 // ["Harry", "Ron", "Hermione", "Minerva", "Albus", "Draco"], 4
 const consecutiveStrings = (arr, k) => {
+  if (k > arr.length || k < 0 || arr.length === 0) {
+    return '';
+  }
+
   let maxLength = 0;
   let resultString = '';
 
@@ -23,6 +27,7 @@ const consecutiveStrings = (arr, k) => {
     let iterate = 0;
     let longestStringLength = 0;
     let longestString = '';
+
     while (iterate < k) {
       longestStringLength += arr[i + iterate].length;
       longestString += arr[i + iterate];
