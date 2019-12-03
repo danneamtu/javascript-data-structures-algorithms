@@ -1,5 +1,5 @@
-const consecutiveStrings = require('./index');
-​
+const consecutiveStrings = require('./consecutiveStrings');
+
 describe('consecutive strings', () => {
     describe('edge cases', () => {
         it('returns empty string when k <= 0', () => {
