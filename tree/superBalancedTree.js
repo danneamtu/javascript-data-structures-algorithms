@@ -1,5 +1,10 @@
+// Time complexity of O(n) - Where n is the number of nodes in the tree.
+// Space complexity of O(n) - Where n is the length of nodes in the nodes array.
+// but O(d), where d is the amount of depths, maximum of 2, in an array and set.
+
 const isBalanced = (treeNode) => {
-  const depths = [];
+  const depths = new Set();
+  const depthsCalculate = [];
 
   const nodes = [[treeRoot, 0]];
 
@@ -9,7 +14,18 @@ const isBalanced = (treeNode) => {
     const depth = nodePair[1];
 
     if (!node.left && !node.right) {
-      
+      if (!depths.has(depth)) {
+        depths.add(depth);
+        depthsCalculate.push(depth);
+
+        if (
+          depths.size > 2 ||
+          (depths.size === 2 &&
+            Math.abs(depthsCalculate[0] - depthsCalculate[1]) > 1)
+        ) {
+          return false;
+        }
+      }
     } else {
       if (node.left) {
         nodes.push([node.left, depth + 1]);
@@ -20,4 +36,6 @@ const isBalanced = (treeNode) => {
       }
     }
   }
+
+  return true;
 };
