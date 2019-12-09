@@ -24,9 +24,48 @@ class MaxBinaryHeap {
     const result = this.values[0];
     const end = this.values.pop();
 
-    this.values[0] = end;
+    if (this.values.length > 0) {
+      this.values[0] = end;
+      this.sinkDown();
+    }
 
     return result;
+  }
+
+  sinkDown() {
+    let index = 0;
+    const length = this.values.length;
+    const element = this.values[0];
+
+    while (true) {
+      let leftIndex = index * 2 + 1;
+      let rightIndex = index * 2 + 2;
+
+      let leftValue, rightValue;
+      let swap = null;
+
+      if (leftIndex < length) {
+        leftValue = this.values[leftIndex];
+        if (leftValue > element) {
+          swap = leftIndex;
+        }
+      }
+
+      if (rightIndex < length) {
+        rightValue = this.values[rightIndex];
+        if (
+          (swap === null && rightValue > element) ||
+          (swap !== null && rightValue > leftValue)
+        ) {
+          swap = rightIndex;
+        }
+      }
+
+      if (swap === null) break;
+      this.values[index] = this.values[swap];
+      this.values[swap] = element;
+      index = swap;
+    }
   }
 }
 
@@ -37,5 +76,9 @@ maxheap.insert(3);
 maxheap.insert(90);
 maxheap.insert(101);
 console.log(maxheap.values);
+console.log(maxheap.extractMax());
+console.log(maxheap.extractMax());
+console.log(maxheap.extractMax());
+console.log(maxheap.extractMax());
 console.log(maxheap.extractMax());
 console.log(maxheap.values);
