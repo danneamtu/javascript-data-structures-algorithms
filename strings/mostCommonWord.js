@@ -1,60 +1,70 @@
 const mostCommonWord = (paragraph, banned) => {
-  let max = 0;
+  const bannedWords = new Set(banned);
+  const wordCount = {};
+  const pLowerCased = paragraph.toLowerCase();
+
+  let maxCount = 0;
   let result = '';
 
-  const bannedMap = new Set(banned);
-  const wordCount = {};
-
-  let str = paragraph.toLowerCase();
   let i = 0;
-  let word = '';
+  let currentWord = '';
 
-  while (i < str.length) {
-    if (str.charCodeAt(i) >= 97 && str.charCodeAt(i) <= 122) {
-      word += str[i];
-      if (word.length > 0 && i === str.length - 1) {
-        if (word in wordCount) {
-          wordCount[word] += 1;
+  while (i < pLowerCased.length) {
+    if (pLowerCased.charCodeAt(i) >= 97 && pLowerCased.charCodeAt(i) <= 122) {
+      currentWord += pLowerCased[i];
 
-          if (wordCount[word] > max && !bannedMap.has(word)) {
-            result = word;
-            max = wordCount[word];
+      if (currentWord.length > 0 && i === pLowerCased.length - 1) {
+        if (currentWord in wordCount) {
+          wordCount[currentWord] += 1;
+
+          if (
+            wordCount[currentWord] > maxCount &&
+            !bannedWords.has(currentWord)
+          ) {
+            result = currentWord;
+            maxCount = wordCount[currentWord];
           }
-
-          word = '';
-          i += 1;
         } else {
-          wordCount[word] = 1;
-          if (wordCount[word] > max && !bannedMap.has(word)) {
-            result = word;
-            max = wordCount[word];
-          }
+          wordCount[currentWord] = 1;
 
-          word = '';
-          i += 1;
+          if (
+            wordCount[currentWord] > maxCount &&
+            !bannedWords.has(currentWord)
+          ) {
+            result = currentWord;
+            maxCount = wordCount[currentWord];
+          }
         }
       }
+
       i += 1;
     } else {
-      if (word.length > 0) {
-        if (word in wordCount) {
-          wordCount[word] += 1;
+      if (currentWord.length > 0) {
+        if (currentWord in wordCount) {
+          wordCount[currentWord] += 1;
 
-          if (wordCount[word] > max && !bannedMap.has(word)) {
-            result = word;
-            max = wordCount[word];
+          if (
+            wordCount[currentWord] > maxCount &&
+            !bannedWords.has(currentWord)
+          ) {
+            result = currentWord;
+            maxCount = wordCount[currentWord];
           }
 
-          word = '';
+          currentWord = '';
           i += 1;
         } else {
-          wordCount[word] = 1;
-          if (wordCount[word] > max && !bannedMap.has(word)) {
-            result = word;
-            max = wordCount[word];
+          wordCount[currentWord] = 1;
+
+          if (
+            wordCount[currentWord] > maxCount &&
+            !bannedWords.has(currentWord)
+          ) {
+            result = currentWord;
+            maxCount = wordCount[currentWord];
           }
 
-          word = '';
+          currentWord = '';
           i += 1;
         }
       } else {
