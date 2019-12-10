@@ -1,30 +1,4 @@
-const checkWordInWordCount = (
-  wordCount,
-  bannedWords,
-  currentWord,
-  result,
-  maxCount,
-) => {
-  if (currentWord in wordCount) {
-    wordCount[currentWord] += 1;
-
-    if (wordCount[currentWord] > maxCount && !bannedWords.has(currentWord)) {
-      result = currentWord;
-      maxCount = wordCount[currentWord];
-    }
-  } else {
-    wordCount[currentWord] = 1;
-
-    if (wordCount[currentWord] > maxCount && !bannedWords.has(currentWord)) {
-      result = currentWord;
-      maxCount = wordCount[currentWord];
-    }
-  }
-
-  return [currentWord, result, maxCount];
-};
-
-const mostCommonWord = (paragraph, banned) => {
+function mostCommonWord(paragraph, banned) {
   const bannedWords = new Set(banned);
   const wordCount = {};
   const pLowerCased = paragraph.toLowerCase();
@@ -69,4 +43,30 @@ const mostCommonWord = (paragraph, banned) => {
   }
 
   return result;
-};
+}
+
+function checkWordInWordCount(
+  wordCount,
+  bannedWords,
+  currentWord,
+  result,
+  maxCount,
+) {
+  if (currentWord in wordCount) {
+    wordCount[currentWord] += 1;
+
+    if (wordCount[currentWord] > maxCount && !bannedWords.has(currentWord)) {
+      result = currentWord;
+      maxCount = wordCount[currentWord];
+    }
+  } else {
+    wordCount[currentWord] = 1;
+
+    if (wordCount[currentWord] > maxCount && !bannedWords.has(currentWord)) {
+      result = currentWord;
+      maxCount = wordCount[currentWord];
+    }
+  }
+
+  return [currentWord, result, maxCount];
+}
