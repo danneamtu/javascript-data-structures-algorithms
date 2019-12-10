@@ -1,3 +1,6 @@
+// Time complexity O(n) - Where n is the length of the paragraph input string.
+// Space complexity O(n) - Where n is the length of the wordCount hash table.
+
 const checkWordInWordCount = (
   wordCount,
   bannedWords,
