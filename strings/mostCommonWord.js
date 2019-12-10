@@ -1,3 +1,29 @@
+const checkWordInWordCount = (
+  wordCount,
+  bannedWords,
+  currentWord,
+  result,
+  maxCount,
+) => {
+  if (currentWord in wordCount) {
+    wordCount[currentWord] += 1;
+
+    if (wordCount[currentWord] > maxCount && !bannedWords.has(currentWord)) {
+      result = currentWord;
+      maxCount = wordCount[currentWord];
+    }
+  } else {
+    wordCount[currentWord] = 1;
+
+    if (wordCount[currentWord] > maxCount && !bannedWords.has(currentWord)) {
+      result = currentWord;
+      maxCount = wordCount[currentWord];
+    }
+  }
+
+  return [currentWord, result, maxCount];
+};
+
 const mostCommonWord = (paragraph, banned) => {
   const bannedWords = new Set(banned);
   const wordCount = {};
@@ -14,59 +40,28 @@ const mostCommonWord = (paragraph, banned) => {
       currentWord += pLowerCased[i];
 
       if (currentWord.length > 0 && i === pLowerCased.length - 1) {
-        if (currentWord in wordCount) {
-          wordCount[currentWord] += 1;
-
-          if (
-            wordCount[currentWord] > maxCount &&
-            !bannedWords.has(currentWord)
-          ) {
-            result = currentWord;
-            maxCount = wordCount[currentWord];
-          }
-        } else {
-          wordCount[currentWord] = 1;
-
-          if (
-            wordCount[currentWord] > maxCount &&
-            !bannedWords.has(currentWord)
-          ) {
-            result = currentWord;
-            maxCount = wordCount[currentWord];
-          }
-        }
+        [currentWord, result, maxCount] = checkWordInWordCount(
+          wordCount,
+          bannedWords,
+          currentWord,
+          result,
+          maxCount,
+        );
       }
 
       i += 1;
     } else {
       if (currentWord.length > 0) {
-        if (currentWord in wordCount) {
-          wordCount[currentWord] += 1;
+        [currentWord, result, maxCount] = checkWordInWordCount(
+          wordCount,
+          bannedWords,
+          currentWord,
+          result,
+          maxCount,
+        );
 
-          if (
-            wordCount[currentWord] > maxCount &&
-            !bannedWords.has(currentWord)
-          ) {
-            result = currentWord;
-            maxCount = wordCount[currentWord];
-          }
-
-          currentWord = '';
-          i += 1;
-        } else {
-          wordCount[currentWord] = 1;
-
-          if (
-            wordCount[currentWord] > maxCount &&
-            !bannedWords.has(currentWord)
-          ) {
-            result = currentWord;
-            maxCount = wordCount[currentWord];
-          }
-
-          currentWord = '';
-          i += 1;
-        }
+        currentWord = '';
+        i += 1;
       } else {
         i += 1;
       }
