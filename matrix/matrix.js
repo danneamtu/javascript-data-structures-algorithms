@@ -1,4 +1,4 @@
-function matrix(n) {
+const matrix = (n) => {
   let results = [];
 
   for (let i = 0; i < n; i++) {
@@ -37,7 +37,7 @@ function matrix(n) {
     startColumn++;
   }
 
-  return results
-}
+  return results;
+};
 
 module.exports = matrix;
