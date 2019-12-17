@@ -1,4 +1,4 @@
-const fibonacci_70 = require('./fibonacci_70');
+const fibonacci_70 = require('./fibonacciMemoization');
 
 // [0,1,1,2,3,5,8,13]
 

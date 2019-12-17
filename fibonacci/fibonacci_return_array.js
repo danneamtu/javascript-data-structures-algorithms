@@ -1,11 +1,4 @@
-/*
- * Complete the 'fibonacci' function below.
- *
- * The function is expected to return an INTEGER_ARRAY.
- * The function accepts INTEGER n as parameter.
- */
-
-function fibonacci(n) {
+const fibonacci = (n) => {
   let arr = [0, 1];
 
   if (n === 2) {
@@ -21,4 +14,4 @@ function fibonacci(n) {
   }
 
   return arr;
-}
+};
